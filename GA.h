@@ -42,6 +42,7 @@ typedef struct GA_Population_t
 #include"GA_crossover.h"
 #include"GA_fitness.h"
 #include"GA_mutation.h"
+#include"GA_codec.h"
 
 #endif
 

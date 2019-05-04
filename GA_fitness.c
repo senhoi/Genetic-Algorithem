@@ -2,12 +2,14 @@
 
 double GA_Fitness_Func(double var_value)
 {
-	return -var_value - 10 * sin(5 * var_value) - 7 * cos(4 * var_value);
+	return var_value + 10 * sin(5 * var_value) + 7 * cos(4 * var_value);
 }
 
 void GA_Fitness(GA_Population_t* pGA_population)
 {
 	double var_value;
+	
+	//GA_Codec_Gray2Binary(pGA_population);
 
 	for (int i = 0; i < pGA_population->population_size; i++)
 	{
@@ -15,8 +17,10 @@ void GA_Fitness(GA_Population_t* pGA_population)
 		pGA_population->individual[i].fitness = GA_Fitness_Func(var_value);
 	}
 
+	//GA_Codec_Binary2Gray(pGA_population);
+
 	GA_Misc_GetBestMeanFitness(pGA_population);
 	GA_Misc_GetBestIndividual(pGA_population);
-	//GA_Misc_Log(pGA_population);
+	GA_Misc_Log(pGA_population);
 }
 

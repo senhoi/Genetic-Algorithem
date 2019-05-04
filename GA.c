@@ -39,6 +39,8 @@ void GA_Init(GA_Population_t* pGA_population,
 		//GA_Misc_DispChromosome_Binary(pGA_population, pGA_population->individual[i]);
 	}
 
+	GA_Codec_Binary2Gray(pGA_population);
+
 }
  
 void GA_Kill(GA_Population_t* pGA_population)
@@ -56,13 +58,14 @@ void GA_Calc(GA_Population_t* pGA_population)
 		GA_Crossover(pGA_population);
 		GA_Mutation(pGA_population);
 	}
+	GA_Codec_Gray2Binary(pGA_population);
 	GA_Misc_DispPopulationInfo(pGA_population);
 }
 
 void main(void)
 {
 
-	GA_Init(&Kangaroo, 30, 30, 30, 10.0f, 0.0f, 0.6f, 0.1f);
+	GA_Init(&Kangaroo, 30, 30, 200, 10.0f, 0.0f, 0.6f, 0.1f);
 	GA_Calc(&Kangaroo);
 	GA_Kill(&Kangaroo);
 

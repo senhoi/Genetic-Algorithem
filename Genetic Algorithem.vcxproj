@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GA_codec.c" />
     <ClCompile Include="GA_crossover.c" />
     <ClCompile Include="GA_fitness.c" />
     <ClCompile Include="GA_misc.c" />
@@ -28,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GA.h" />
+    <ClInclude Include="GA_codec.h" />
     <ClInclude Include="GA_crossover.h" />
     <ClInclude Include="GA_fitness.h" />
     <ClInclude Include="GA_misc.h" />
